@@ -37,7 +37,7 @@ def get_urls(start, end):
             try:
                 f1 = urlopen(url).read().decode('utf-8')
             except HTTPError as http_err:
-                pass
+                continue
             
             f2 = f1.split('\n')
 
@@ -113,8 +113,8 @@ def main():
     if len(sys.argv) == 2:
         start_time = time.time()
 
-        start = datetime.datetime.strptime("28-10-2003", "%d-%m-%Y")
-        end = datetime.datetime.strptime("14-04-2004", "%d-%m-%Y")
+        start = datetime.datetime.strptime("25-10-2016", "%d-%m-%Y")
+        end = datetime.datetime.strptime("12-04-2017", "%d-%m-%Y")
 
         games_urls = get_urls(start, end)
         logger.info('got {} link'.format(len(games_urls)))
