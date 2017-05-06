@@ -112,12 +112,9 @@ def run(games_urls):
 def main():
     if len(sys.argv) == 2:
         start_time = time.time()
-        
-        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
-        logger = logging.getLogger(__name__)
 
-        start = datetime.datetime.strptime("25-10-2016", "%d-%m-%Y")
-        end = datetime.datetime.strptime("12-04-2017", "%d-%m-%Y")
+        start = datetime.datetime.strptime("28-10-2003", "%d-%m-%Y")
+        end = datetime.datetime.strptime("14-04-2004", "%d-%m-%Y")
 
         games_urls = get_urls(start, end)
         logger.info('got {} link'.format(len(games_urls)))
@@ -140,4 +137,6 @@ def main():
         print('usage: eg to scrap 03/04 stats, use 2nd year ie 2004 - python bball_scraper.py 2004')
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+    logger = logging.getLogger(__name__)
     main()
