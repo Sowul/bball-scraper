@@ -117,7 +117,7 @@ def main():
         end = datetime.datetime.strptime("12-04-2017", "%d-%m-%Y")
 
         games_urls = get_urls(start, end)
-        logger.info('got {} link'.format(len(games_urls)))
+        logger.info('got {} urls'.format(len(games_urls)))
         logger.info('scraper started')
         
         games = run(games_urls)
